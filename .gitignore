@@ -7,3 +7,9 @@ build/
 
 # Directory created by dartdoc
 doc/api/
+dart_json_builder.iml
+pubspec.lock
+.idea/
+.g.dart
+**.g.dart
+**.freezed.dart

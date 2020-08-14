@@ -12,18 +12,17 @@ String get pub => io.Platform.isWindows
     : 'pub';
 
 @DefaultTask('Gen')
-@Depends(get)
 Future<void> gen() =>
     _run('$pub run build_runner build --delete-conflicting-outputs');
 
-@Task('Upgrade')
+@Task('Get')
 @Depends(upgrade)
 Future<void> get() =>
-    _run('$pub upgrade');
-
-@Task('Get')
-Future<void> upgrade() =>
     _run('$pub get');
+
+@Task('Upgrade')
+Future<void> upgrade() =>
+    _run('$pub upgrade');
 
 @Task('Outdated')
 @Depends(get)
